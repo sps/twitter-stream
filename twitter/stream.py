@@ -20,11 +20,11 @@ class BaseStreamingHandler(object):
 
 	def track(self,keywords=[]):
 		"""stream tweets that match a list of keywords"""
-		self.__stream(self.__make_request("%s?track=%s" % ('http://stream.twitter.com/1/statuses/filter.json', urllib2.quote(','.join(keywords)))))
+		self.__stream(self.__make_request("%s?track=%s" % ('https://stream.twitter.com/1/statuses/filter.json', urllib2.quote(','.join(keywords)))))
 
 	def sample(self):
 		"""Streams a random sample of all public statuses."""
-		self.__stream(self.__make_request('http://stream.twitter.com/1/statuses/sample.json'))
+		self.__stream(self.__make_request('https://stream.twitter.com/1/statuses/sample.json'))
 
 	def __stream(self,request):
 		"""docstring for __stream"""
